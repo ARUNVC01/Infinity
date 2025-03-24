@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previous Year Questions - Infinity</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pyq.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Prevent theme flashing -->
+    <script>
+        // Apply theme immediately to prevent flashing
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.body.className = savedTheme;
+            } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.body.className = 'dark-mode';
+            } else {
+                document.body.className = 'light-mode';
+            }
+        })();
+    </script>
+</head>
+<body class="light-mode">
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Infinity Logo">
+                <h1>Infinity</h1>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="notes.html">Notes</a></li>
+                    <li><a href="pyq.html" class="active">PYQ</a></li>
+                    <li><a href="YT-Channels/channel.html">YT-Channels</a></li>
+                    <li><a href="login/login.html" class="btn-login">Login/Register</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="theme-toggle" id="theme-toggle">
+                <i class="fas fa-sun"></i>
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- PYQ Hero Section -->
+    <section class="pyq-hero">
+        <div class="container">
+            <div class="pyq-hero-content">
+                <h1>Previous Year Questions</h1>
+                <p>Access Karnataka Board previous year question papers with solutions</p>
+                <div class="search-container">
+                    <input type="text" id="search-pyq" placeholder="Search by year, subject or exam type...">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Class Selection Tabs -->
+    <section class="class-selection">
+        <div class="container">
+            <div class="class-tabs">
+                <div class="tab active" data-class="10th">10th Grade</div>
+                <div class="tab" data-class="12th">12th Grade</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PYQ Filter Section -->
+    <section class="pyq-filter-section">
+        <div class="container">
+            <div class="filter-container">
+                <div class="filter-group">
+                    <label>Subject</label>
+                    <select id="subject-filter">
+                        <option value="all">All Subjects</option>
+                        <option value="mathematics">Mathematics</option>
+                        <option value="science">Science</option>
+                        <option value="social-science">Social Science</option>
+                        <option value="english">English</option>
+                        <option value="hindi">Hindi</option>
+                        <option value="kannada">Kannada</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Year</label>
+                    <select id="year-filter">
+                        <option value="all">All Years</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                        <option value="2019">2019</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Exam Type</label>
+                    <select id="exam-filter">
+                        <option value="all">All Types</option>
+                        <option value="annual">Annual Exam</option>
+                        <option value="supplementary">Supplementary Exam</option>
+                        <option value="model">Model Paper</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Difficulty</label>
+                    <select id="difficulty-filter">
+                        <option value="all">All Levels</option>
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
+                <div class="filter-group sort-group">
+                    <label>Sort By</label>
+                    <div class="sort-options">
+                        <button class="sort-btn active" data-sort="latest">Latest</button>
+                        <button class="sort-btn" data-sort="popular">Most Popular</button>
+                        <button class="sort-btn" data-sort="difficulty">Difficulty</button>
+                    </div>
+                </div>
+                <button class="btn-reset-filter">
+                    <i class="fas fa-sync-alt"></i>
+                    Reset Filters
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- PYQ Grid Section -->
+    <section class="pyq-grid-section">
+        <div class="container">
+            <div class="pyq-grid" id="pyq-container">
+                <!-- PYQ Card 1 -->
+                <div class="pyq-card" data-class="10th" data-subject="mathematics" data-year="2023" data-type="annual" data-difficulty="medium">
+                    <div class="pyq-card-header">
+                        <span class="pyq-subject">Mathematics</span>
+                        <span class="pyq-year">2023</span>
+                    </div>
+                    <div class="pyq-card-body">
+                        <h3>Annual Examination</h3>
+                        <div class="pyq-details">
+                            <p><i class="fas fa-book"></i> 10th Grade</p>
+                            <p><i class="fas fa-clock"></i> 3 Hours</p>
+                            <p><i class="fas fa-star-half-alt"></i> Medium</p>
+                        </div>
+                        <div class="pyq-actions">
+                            <button class="btn-preview" data-preview="math-2023-annual">
+                                <i class="fas fa-eye"></i> Preview
+                            </button>
+                            <div class="pyq-downloads">
+                                <a href="#" class="btn-download question">
+                                    <i class="fas fa-file-pdf"></i> Question Paper
+                                </a>
+                                <a href="#" class="btn-download solution">
+                                    <i class="fas fa-file-pdf"></i> Solution
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pyq-card-footer">
+                        <div class="pyq-helpful">
+                            <span>Was this helpful?</span>
+                            <button class="helpful-btn"><i class="far fa-thumbs-up"></i> Yes</button>
+                            <button class="helpful-btn"><i class="far fa-thumbs-down"></i> No</button>
+                        </div>
+                        <div class="pyq-downloads-count">
+                            <i class="fas fa-download"></i> 3.5k
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PYQ Card 2 -->
+                <div class="pyq-card" data-class="10th" data-subject="science" data-year="2023" data-type="annual" data-difficulty="hard">
+                    <div class="pyq-card-header">
+                        <span class="pyq-subject">Science</span>
+                        <span class="pyq-year">2023</span>
+                    </div>
+                    <div class="pyq-card-body">
+                        <h3>Annual Examination</h3>
+                        <div class="pyq-details">
+                            <p><i class="fas fa-book"></i> 10th Grade</p>
+                            <p><i class="fas fa-clock"></i> 3 Hours</p>
+                            <p><i class="fas fa-star"></i> Hard</p>
+                        </div>
+                        <div class="pyq-actions">
+                            <button class="btn-preview" data-preview="science-2023-annual">
+                                <i class="fas fa-eye"></i> Preview
+                            </button>
+                            <div class="pyq-downloads">
+                                <a href="#" class="btn-download question">
+                                    <i class="fas fa-file-pdf"></i> Question Paper
+                                </a>
+                                <a href="#" class="btn-download solution">
+                                    <i class="fas fa-file-pdf"></i> Solution
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pyq-card-footer">
+                        <div class="pyq-helpful">
+                            <span>Was this helpful?</span>
+                            <button class="helpful-btn"><i class="far fa-thumbs-up"></i> Yes</button>
+                            <button class="helpful-btn"><i class="far fa-thumbs-down"></i> No</button>
+                        </div>
+                        <div class="pyq-downloads-count">
+                            <i class="fas fa-download"></i> 4.2k
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PYQ Card 3 -->
+                <div class="pyq-card" data-class="10th" data-subject="social-science" data-year="2023" data-type="annual" data-difficulty="medium">
+                    <div class="pyq-card-header">
+                        <span class="pyq-subject">Social Science</span>
+                        <span class="pyq-year">2023</span>
+                    </div>
+                    <div class="pyq-card-body">
+                        <h3>Annual Examination</h3>
+                        <div class="pyq-details">
+                            <p><i class="fas fa-book"></i> 10th Grade</p>
+                            <p><i class="fas fa-clock"></i> 3 Hours</p>
+                            <p><i class="fas fa-star-half-alt"></i> Medium</p>
+                        </div>
+                        <div class="pyq-actions">
+                            <button class="btn-preview" data-preview="social-2023-annual">
+                                <i class="fas fa-eye"></i> Preview
+                            </button>
+                            <div class="pyq-downloads">
+                                <a href="#" class="btn-download question">
+                                    <i class="fas fa-file-pdf"></i> Question Paper
+                                </a>
+                                <a href="#" class="btn-download solution">
+                                    <i class="fas fa-file-pdf"></i> Solution
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pyq-card-footer">
+                        <div class="pyq-helpful">
+                            <span>Was this helpful?</span>
+                            <button class="helpful-btn"><i class="far fa-thumbs-up"></i> Yes</button>
+                            <button class="helpful-btn"><i class="far fa-thumbs-down"></i> No</button>
+                        </div>
+                        <div class="pyq-downloads-count">
+                            <i class="fas fa-download"></i> 3.1k
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PYQ Card 4 -->
+                <div class="pyq-card" data-class="10th" data-subject="english" data-year="2023" data-type="annual" data-difficulty="easy">
+                    <div class="pyq-card-header">
+                        <span class="pyq-subject">English</span>
+                        <span class="pyq-year">2023</span>
+                    </div>
+                    <div class="pyq-card-body">
+                        <h3>Annual Examination</h3>
+                        <div class="pyq-details">
+                            <p><i class="fas fa-book"></i> 10th Grade</p>
+                            <p><i class="fas fa-clock"></i> 3 Hours</p>
+                            <p><i class="fas fa-star-half-alt"></i> Easy</p>
+                        </div>
+                        <div class="pyq-actions">
+                            <button class="btn-preview" data-preview="english-2023-annual">
+                                <i class="fas fa-eye"></i> Preview
+                            </button>
+                            <div class="pyq-downloads">
+                                <a href="#" class="btn-download question">
+                                    <i class="fas fa-file-pdf"></i> Question Paper
+                                </a>
+                                <a href="#" class="btn-download solution">
+                                    <i class="fas fa-file-pdf"></i> Solution
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pyq-card-footer">
+                        <div class="pyq-helpful">
+                            <span>Was this helpful?</span>
+                            <button class="helpful-btn"><i class="far fa-thumbs-up"></i> Yes</button>
+                            <button class="helpful-btn"><i class="far fa-thumbs-down"></i> No</button>
+                        </div>
+                        <div class="pyq-downloads-count">
+                            <i class="fas fa-download"></i> 2.8k
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 12th Grade Cards (Initially Hidden) -->
+                <div class="pyq-card" data-class="12th" data-subject="mathematics" data-year="2023" data-type="annual" data-difficulty="hard">
+                    <div class="pyq-card-header">
+                        <span class="pyq-subject">Mathematics</span>
+                        <span class="pyq-year">2023</span>
+                    </div>
+                    <div class="pyq-card-body">
+                        <h3>Annual Examination</h3>
+                        <div class="pyq-details">
+                            <p><i class="fas fa-book"></i> 12th Grade</p>
+                            <p><i class="fas fa-clock"></i> 3 Hours</p>
+                            <p><i class="fas fa-star"></i> Hard</p>
+                        </div>
+                        <div class="pyq-actions">
+                            <button class="btn-preview" data-preview="math-12-2023-annual">
+                                <i class="fas fa-eye"></i> Preview
+                            </button>
+                            <div class="pyq-downloads">
+                                <a href="#" class="btn-download question">
+                                    <i class="fas fa-file-pdf"></i> Question Paper
+                                </a>
+                                <a href="#" class="btn-download solution">
+                                    <i class="fas fa-file-pdf"></i> Solution
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pyq-card-footer">
+                        <div class="pyq-helpful">
+                            <span>Was this helpful?</span>
+                            <button class="helpful-btn"><i class="far fa-thumbs-up"></i> Yes</button>
+                            <button class="helpful-btn"><i class="far fa-thumbs-down"></i> No</button>
+                        </div>
+                        <div class="pyq-downloads-count">
+                            <i class="fas fa-download"></i> 5.6k
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pyq-card" data-class="12th" data-subject="physics" data-year="2023" data-type="annual" data-difficulty="hard">
+                    <div class="pyq-card-header">
+                        <span class="pyq-subject">Physics</span>
+                        <span class="pyq-year">2023</span>
+                    </div>
+                    <div class="pyq-card-body">
+                        <h3>Annual Examination</h3>
+                        <div class="pyq-details">
+                            <p><i class="fas fa-book"></i> 12th Grade</p>
+                            <p><i class="fas fa-clock"></i> 3 Hours</p>
+                            <p><i class="fas fa-star"></i> Hard</p>
+                        </div>
+                        <div class="pyq-actions">
+                            <button class="btn-preview" data-preview="physics-12-2023-annual">
+                                <i class="fas fa-eye"></i> Preview
+                            </button>
+                            <div class="pyq-downloads">
+                                <a href="#" class="btn-download question">
+                                    <i class="fas fa-file-pdf"></i> Question Paper
+                                </a>
+                                <a href="#" class="btn-download solution">
+                                    <i class="fas fa-file-pdf"></i> Solution
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pyq-card-footer">
+                        <div class="pyq-helpful">
+                            <span>Was this helpful?</span>
+                            <button class="helpful-btn"><i class="far fa-thumbs-up"></i> Yes</button>
+                            <button class="helpful-btn"><i class="far fa-thumbs-down"></i> No</button>
+                        </div>
+                        <div class="pyq-downloads-count">
+                            <i class="fas fa-download"></i> 4.9k
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- No Results Found -->
+            <div class="no-results" style="display: none;">
+                <i class="fas fa-search"></i>
+                <h3>No Papers Found</h3>
+                <p>We couldn't find any papers matching your criteria. Try changing your filters or search terms.</p>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more">
+                <button id="load-more-btn" class="btn-load-more">Load More Papers</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- PYQ Preview Modal -->
+    <div class="preview-modal" id="preview-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Mathematics - 2023 Annual Examination</h3>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="preview-tabs">
+                    <button class="preview-tab active" data-tab="question">Question Paper</button>
+                    <button class="preview-tab" data-tab="solution">Solution</button>
+                </div>
+                <div class="preview-content">
+                    <div class="preview-pane active" id="question-preview">
+                        <div class="preview-iframe">
+                            <img src="images/sample-math-question.jpg" alt="Sample Math Question Paper" class="preview-placeholder">
+                        </div>
+                    </div>
+                    <div class="preview-pane" id="solution-preview">
+                        <div class="preview-iframe">
+                            <img src="images/sample-math-solution.jpg" alt="Sample Math Solution" class="preview-placeholder">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="modal-actions">
+                    <a href="#" class="btn-download-modal">
+                        <i class="fas fa-download"></i> Download PDF
+                    </a>
+                    <div class="modal-feedback">
+                        <span>Was this helpful?</span>
+                        <button class="helpful-btn"><i class="far fa-thumbs-up"></i> Yes</button>
+                        <button class="helpful-btn"><i class="far fa-thumbs-down"></i> No</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Need More Study Resources?</h2>
+                <p>Join Infinity to access our complete library of study materials, notes, practice tests, and more.</p>
+                <div class="cta-buttons">
+                    <a href="login/login.html" class="btn-primary">Register Now</a>
+                    <a href="#" class="btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h2>Infinity</h2>
+                <p>Your partner for academic excellence, providing comprehensive resources for Karnataka Board students.</p>
+                <div class="example-2">
+                    <div class="icon-content">
+                        <a href="#">
+                            <div class="filled"></div>
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <div class="tooltip">Facebook</div>
+                    </div>
+                    <div class="icon-content">
+                        <a href="#">
+                            <div class="filled"></div>
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <div class="tooltip">Twitter</div>
+                    </div>
+                    <div class="icon-content">
+                        <a href="#">
+                            <div class="filled"></div>
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <div class="tooltip">Instagram</div>
+                    </div>
+                    <div class="icon-content">
+                        <a href="#">
+                            <div class="filled"></div>
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <div class="tooltip">YouTube</div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-angle-right"></i> Home</a></li>
+                    <li><a href="notes.html"><i class="fas fa-angle-right"></i> Notes</a></li>
+                    <li><a href="pyq.html"><i class="fas fa-angle-right"></i> PYQ</a></li>
+                    <li><a href="#"><i class="fas fa-angle-right"></i> Departments</a></li>
+                    <li><a href="author pro/author_profile.html"><i class="fas fa-angle-right"></i> About Author</a></li>
+                    <li><a href="#"><i class="fas fa-angle-right"></i> Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-angle-right"></i> 10th Grade Materials</a></li>
+                    <li><a href="#"><i class="fas fa-angle-right"></i> 12th Grade Materials</a></li>
+                    <li><a href="#"><i class="fas fa-angle-right"></i> Model Question Papers</a></li>
+                    
+                    <li><a href="#"><i class="fas fa-angle-right"></i> Study Tips</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <ul class="footer-links">
+                    <li><a href="mailto:info@infinity.com"><i class="fas fa-envelope"></i> info@infinity.com</a></li>
+                    <li><a href="tel:+919876543210"><i class="fas fa-phone"></i> +91 9876543210</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Bengaluru, Karnataka, India</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Designed & Developed by Arun Chavan || Copyright &copy; 2025 Infinity.com</p>
+        </div>
+    </footer>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <script src="script.js"></script>
+    <script src="pyq.js"></script>
+</body>
+</html> 
