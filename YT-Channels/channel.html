@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational YouTube Channels - Karnataka State Board</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1, h2 {
+            color: #0056b3;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .section {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        .channel-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+        }
+        .channel-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            transition: transform 0.3s;
+        }
+        .channel-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .channel-title {
+            color: #0056b3;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .subject-tag {
+            display: inline-block;
+            background-color: #e6f2ff;
+            color: #0056b3;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        .language-tag {
+            display: inline-block;
+            background-color: #ffe6e6;
+            color: #b30000;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #0056b3;
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background-color: #003d82;
+        }
+        .featured-teacher {
+            border: 2px solid #0056b3;
+            background-color: #f0f7ff;
+        }
+        .featured-badge {
+            background-color: #0056b3;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+        }
+        @media (max-width: 768px) {
+            .channel-list {
+                grid-template-columns: 1fr;
+            }
+        }
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: #0056b3;
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 50%;
+            transition: all 0.3s;
+            z-index: 1000;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+        .back-btn:hover {
+            background-color: #003d82;
+            transform: scale(1.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html" class="back-btn" title="Go back to home">←</a>
+    <h1>Educational YouTube Channels</h1>
+    <h2>Karnataka State Board - 10th & 12th Standards</h2>
+    
+    <div class="container">
+        <div class="section">
+            <h2>Featured Teachers - Best of Karnataka Board</h2>
+            <div class="channel-list">
+                <div class="channel-card featured-teacher">
+                    <span class="featured-badge">Top-Rated Physics Teacher</span>
+                    <h3 class="channel-title">Prof. Ravi Kumar Physics</h3>
+                    <div>
+                        <span class="subject-tag">Physics</span>
+                        <span class="subject-tag">10th & 12th</span>
+                    </div>
+                    <p>With over 15 years of teaching experience, Prof. Ravi Kumar simplifies complex physics concepts with relatable real-world examples and detailed visualizations. His step-by-step problem-solving approach has helped thousands of students excel in board examinations.</p>
+                    <a href="https://www.youtube.com/c/ProfRaviKumarPhysics" target="_blank" class="btn">Visit Channel</a>
+                </div>
+                
+                <div class="channel-card featured-teacher">
+                    <span class="featured-badge">Top-Rated Mathematics Teacher</span>
+                    <h3 class="channel-title">Sudha Murthy Mathematics</h3>
+                    <div>
+                        <span class="subject-tag">Mathematics</span>
+                        <span class="subject-tag">10th & 12th</span>
+                    </div>
+                    <p>Mrs. Sudha Murthy is renowned for making mathematics accessible to all learning levels. Her unique teaching methodology breaks down complex problems into simple steps, with special focus on board exam patterns and commonly asked questions.</p>
+                    <a href="https://www.youtube.com/c/SudhaMurthyMathematics" target="_blank" class="btn">Visit Channel</a>
+                </div>
+                
+                <div class="channel-card featured-teacher">
+                    <span class="featured-badge">Top-Rated Chemistry Teacher</span>
+                    <h3 class="channel-title">Dr. Vijay Chemical World</h3>
+                    <div>
+                        <span class="subject-tag">Chemistry</span>
+                        <span class="subject-tag">10th & 12th</span>
+                    </div>
+                    <p>Dr. Vijay simplifies organic and inorganic chemistry with 3D molecular models and memorable mnemonics. His practical laboratory demonstrations help students understand chemical reactions and principles that are critical for board examinations.</p>
+                    <a href="https://www.youtube.com/c/DrVijayChemicalWorld" target="_blank" class="btn">Visit Channel</a>
+                </div>
+                
+                <div class="channel-card featured-teacher">
+                    <span class="featured-badge">Top-Rated Biology Teacher</span>
+                    <h3 class="channel-title">Lakshmi Biology Classes</h3>
+                    <div>
+                        <span class="subject-tag">Biology</span>
+                        <span class="subject-tag">10th & 12th</span>
+                    </div>
+                    <p>Ms. Lakshmi's biology lectures use detailed diagrams, animations, and memory techniques to help students master complex biological concepts. Her special focus on previous years' questions and exam preparation has consistently produced top scorers.</p>
+                    <a href="https://www.youtube.com/c/LakshmiBiologyClasses" target="_blank" class="btn">Visit Channel</a>
+                </div>
+                
+                <div class="channel-card featured-teacher">
+                    <span class="featured-badge">Top-Rated English Teacher</span>
+                    <h3 class="channel-title">Prof. Anand's English Academy</h3>
+                    <div>
+                        <span class="subject-tag">English</span>
+                        <span class="subject-tag">10th & 12th</span>
+                    </div>
+                    <p>Prof. Anand specializes in making English literature and grammar accessible to Kannada medium students. His bilingual approach ensures that students understand the nuances of poetry, prose, and grammar rules, with excellent preparation for writing sections.</p>
+                    <a href="https://www.youtube.com/c/ProfAnandsEnglishAcademy" target="_blank" class="btn">Visit Channel</a>
+                </div>
+                
+                <div class="channel-card featured-teacher">
+                    <span class="featured-badge">Top-Rated Social Science Teacher</span>
+                    <h3 class="channel-title">Shivakumar History & Civics</h3>
+                    <div>
+                        <span class="subject-tag">Social Science</span>
+                        <span class="subject-tag">History</span>
+                        <span class="subject-tag">10th & 12th</span>
+                    </div>
+                    <p>Mr. Shivakumar transforms history and civics into engaging stories that are easy to remember. His timeline-based teaching approach and mind maps help students retain complex historical events and constitutional concepts effectively.</p>
+                    <a href="https://www.youtube.com/c/ShivakumarHistoryCivics" target="_blank" class="btn">Visit Channel</a>
+                </div>
+                
+                <div class="channel-card featured-teacher">
+                    <span class="featured-badge">Top-Rated Kannada Teacher</span>
+                    <h3 class="channel-title">Kannada Sahitya Vedike</h3>
+                    <div>
+                        <span class="subject-tag">Kannada</span>
+                        <span class="subject-tag">Literature</span>
+                        <span class="subject-tag">10th & 12th</span>
+                    </div>
+                    <p>This channel provides in-depth analysis of Kannada literature, poetry, and grammar with expert teachers who bring classical and modern Kannada works to life. Their special focus on critical appreciation and writing skills ensures excellent preparation for board exams.</p>
+                    <a href="https://www.youtube.com/c/KannadaSahityaVedike" target="_blank" class="btn">Visit Channel</a>
+                </div>
+                
+                <div class="channel-card featured-teacher">
+                    <span class="featured-badge">Top-Rated Commerce Teacher</span>
+                    <h3 class="channel-title">CA Prakash Accountancy</h3>
+                    <div>
+                        <span class="subject-tag">Accountancy</span>
+                        <span class="subject-tag">Commerce</span>
+                        <span class="subject-tag">12th</span>
+                    </div>
+                    <p>CA Prakash simplifies accountancy and business studies with real-world examples and practical applications. His structured approach to financial statements and accounting principles has helped commerce students achieve distinction in board examinations.</p>
+                    <a href="https://www.youtube.com/c/CAPrakashAccountancy" target="_blank" class="btn">Visit Channel</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Hindi Medium Channels for Karnataka Board Students</h2>
+            <div class="channel-list">
+                <div class="channel-card">
+                    <h3 class="channel-title">Hindi Physics Master</h3>
+                    <div>
+                        <span class="subject-tag">Physics</span>
+                        <span class="subject-tag">10th & 12th</span>
+                        <span class="language-tag">Hindi Medium</span>
+                    </div>
+                    <p>Comprehensive physics lectures in Hindi specifically aligned with Karnataka Board syllabus. The channel offers bilingual explanations and solved examples for both SSLC and PUC students.</p>
+                    <a href="https://www.youtube.com/c/HindiPhysicsMaster" target="_blank" class="btn">Visit Channel</a>
+                </div>
+                
+                <div class="channel-card">
+                    <h3 class="channel-title">Science in Hindi</h3>
+                    <div>
+                        <span class="subject-tag">Science</span>
+                        <span class="subject-tag">Physics</span>
+                        <span class="subject-tag">Chemistry</span>
+                        <span class="subject-tag">10th</span>
+                        <span class="language-tag">Hindi Medium</span>
+                    </div>
+                    <p>Clear explanations of 10th standard science concepts in Hindi with visual aids and demonstrations. The channel follows Karnataka SSLC syllabus with special focus on frequently tested topics.</p>
+                    <a href="https://www.youtube.com/c/ScienceinHindi" target="_blank" class="btn">Visit Channel</a>
+                </div>
+                
+                <div class="channel-card">
+                    <h3 class="channel-title">Hindi Math Solutions</h3>
+                    <div>
+                        <span class="subject-tag">Mathematics</span>
+                        <span class="subject-tag">10th & 12th</span>
+                        <span class="language-tag">Hindi Medium</span>
+                    </div>
+                    <p>Step-by-step mathematics problem solving in Hindi language following Karnataka State Board curriculum. The channel provides detailed explanations for both basic and advanced problems.</p>
+                    <a href="https://www.youtube.com/c/HindiMathSolutions" target="_blank" class="btn">Visit Channel</a>
+                </div>
+                
+                <div class="channel-card">
+                    <h3 class="channel-title">Chemistry Hindi Classes</h3>
+                    <div>
+                        <span class="subject-tag">Chemistry</span>
+                        <span class="subject-tag">12th</span>
+                        <span class="language-tag">Hindi Medium</span>
+                    </div>
+                    <p>PUC II Chemistry lectures in Hindi with 3D molecular models and reaction mechanisms. The channel covers organic, inorganic, and physical chemistry concepts according to Karnataka PUC syllabus.</p>
+                    <a href="https://www.youtube.com/c/ChemistryHindiClasses" target="_blank" class="btn">Visit Channel</a>
+                </div>
+                
+                <div class="channel-card">
+                    <h3 class="channel-title">Biology in Hindi</h3>
+                    <div>
+                        <span class="subject-tag">Biology</span>
+                        <span class="subject-tag">10th & 12th</span>
+                        <span class="language-tag">Hindi Medium</span>
+                    </div>
+                    <p>Comprehensive biology lessons in Hindi covering Karnataka State Board syllabus with detailed diagrams and animations. The channel includes special sections for practical experiments and board exam preparation.</p>
+                    <a href="https://www.youtube.com/c/BiologyinHindi" target="_blank" class="btn">Visit Channel</a>
+                </div>
+                
+                <div class="channel-card">
+                    <h3 class="channel-title">Commerce Hindi Academy</h3>
+                    <div>
+                        <span class="subject-tag">Commerce</span>
+                        <span class="subject-tag">Accountancy</span>
+                        <span class="subject-tag">Business Studies</span>
+                        <span class="subject-tag">12th</span>
+                        <span class="language-tag">Hindi Medium</span>
+                    </div>
+                    <p>Complete commerce education in Hindi for PUC II students covering accountancy, business studies, and economics as per Karnataka Board curriculum. The channel focuses on practical applications and exam-oriented preparation.</p>
+                    <a href="https://www.youtube.com/c/CommerceHindiAcademy" target="_blank" class="btn">Visit Channel</a>
+                </div>
+                
+                <div class="channel-card">
+                    <h3 class="channel-title">Computer Science Hindi</h3>
+                    <div>
+                        <span class="subject-tag">Computer Science</span>
+                        <span class="subject-tag">Programming</span>
+                        <span class="subject-tag">12th</span>
+                        <span class="language-tag">Hindi Medium</span>
+                    </div>
+                    <p>Programming and computer science concepts explained in Hindi following Karnataka PUC syllabus. The channel includes practical coding sessions and algorithm explanations with Hindi instructions.</p>
+                    <a href="https://www.youtube.com/c/ComputerScienceHindi" target="_blank" class="btn">Visit Channel</a>
+                </div>
+                
+                <div class="channel-card">
+                    <h3 class="channel-title">Social Studies Hindi</h3>
+                    <div>
+                        <span class="subject-tag">Social Science</span>
+                        <span class="subject-tag">History</span>
+                        <span class="subject-tag">Geography</span>
+                        <span class="subject-tag">10th</span>
+                        <span class="language-tag">Hindi Medium</span>
+                    </div>
+                    <p>SSLC social studies explained in Hindi with detailed maps, timelines, and visual aids. The channel follows Karnataka Board syllabus with emphasis on conceptual clarity and exam preparation.</p>
+                    <a href="https://www.youtube.com/c/SocialStudiesHindi" target="_blank" class="btn">Visit Channel</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>10th Standard Channels</h2>
+            <div class="channel-list">
+                <div class="channel-card">
+                    <h3 class="channel-title">KSEEB Official</h3>
+                    <div>
+                        <span class="subject-tag">All Subjects</span>
+                        <span class="subject-tag">Official</span>
+                    </div>
+                    <p>Official channel of Karnataka Secondary Education Examination Board with tutorials for all subjects.</p>
+                    <a href="https://www.youtube.com/c/KSEEBOfficial" target="_blank" class="btn">Visit Channel</a>
+                </div>
+                
+                <div class="channel-card">
+                    <h3 class="channel-title">Karnataka Science Hub</h3>
+                    <div>
+                        <span class="subject-tag">Science</span>
+                        <span class="subject-tag">Physics</span>
+                        <span class="subject-tag">Chemistry</span>
+                        <span class="subject-tag">Biology</span>
+                    </div>
+                    <p>Detailed explanations of science concepts with practical demonstrations for 10th standard students.</p>
+                    <a href="https://www.youtube.com/c/KarnatakaScienceHub" target="_blank" class="btn">Visit Channel</a>
+                </div>
+                
+                <div class="channel-card">
+                    <h3 class="channel-title">Karnataka Maths Academy</h3>
+                    <div>
+                        <span class="subject-tag">Mathematics</span>
+                        <span class="subject-tag">Algebra</span>
+                        <span class="subject-tag">Geometry</span>
+                    </div>
+                    <p>Step-by-step solutions for mathematics problems and concepts for SSLC students.</p>
+                    <a href="https://www.youtube.com/c/KarnatakaMathsAcademy" target="_blank" class="btn">Visit Channel</a>
+                </div>
+                
+                <div class="channel-card">
+                    <h3 class="channel-title">Kannada Pathshala</h3>
+                    <div>
+                        <span class="subject-tag">Kannada</span>
+                        <span class="subject-tag">Literature</span>
+                        <span class="subject-tag">Grammar</span>
+                    </div>
+                    <p>Comprehensive coverage of 10th standard Kannada textbook with detailed explanation of poems and prose.</p>
+                    <a href="https://www.youtube.com/c/KannadaPathshala" target="_blank" class="btn">Visit Channel</a>
+                </div>
+                
+                <div class="channel-card">
+                    <h3 class="channel-title">Social Science Simplified</h3>
+                    <div>
+                        <span class="subject-tag">History</span>
+                        <span class="subject-tag">Geography</span>
+                        <span class="subject-tag">Civics</span>
+                    </div>
+                    <p>Easy-to-understand explanations of social science concepts with maps and visual aids.</p>
+                    <a href="https://www.youtube.com/c/SocialScienceSimplified" target="_blank" class="btn">Visit Channel</a>
+                </div>
+                
+                <div class="channel-card">
+                    <h3 class="channel-title">English Excellence</h3>
+                    <div>
+                        <span class="subject-tag">English</span>
+                        <span class="subject-tag">Grammar</span>
+                        <span class="subject-tag">Literature</span>
+                    </div>
+                    <p>English language tutorials covering grammar, prose, poetry, and communication skills for 10th standard.</p>
+                    <a href="https://www.youtube.com/c/EnglishExcellence" target="_blank" class="btn">Visit Channel</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>12th Standard (PUC II) Channels</h2>
+            <div class="channel-list">
+                <div class="channel-card">
+                    <h3 class="channel-title">PU Board Karnataka</h3>
+                    <div>
+                        <span class="subject-tag">All Subjects</span>
+                        <span class="subject-tag">Official</span>
+                    </div>
+                    <p>Official channel for Karnataka Pre-University Education with resources for all PUC II subjects.</p>
+                    <a href="https://www.youtube.com/c/PUBoardKarnataka" target="_blank" class="btn">Visit Channel</a>
+                </div>
+                
+                <div class="channel-card">
+                    <h3 class="channel-title">Physics Guru Karnataka</h3>
+                    <div>
+                        <span class="subject-tag">Physics</span>
+                        <span class="subject-tag">Practical</span>
+                    </div>
+                    <p>In-depth physics lectures covering mechanics, electromagnetism, optics, and modern physics for PUC II.</p>
+                    <a href="https://www.youtube.com/c/PhysicsGuruKarnataka" target="_blank" class="btn">Visit Channel</a>
+                </div>
+                
+                <div class="channel-card">
+                    <h3 class="channel-title">Chemistry Connect</h3>
+                    <div>
+                        <span class="subject-tag">Chemistry</span>
+                        <span class="subject-tag">Organic</span>
+                        <span class="subject-tag">Inorganic</span>
+                    </div>
+                    <p>Comprehensive chemistry tutorials with 3D visualizations of molecular structures and chemical reactions.</p>
+                    <a href="https://www.youtube.com/c/ChemistryConnect" target="_blank" class="btn">Visit Channel</a>
+                </div>
+                
+                <div class="channel-card">
+                    <h3 class="channel-title">Biology Breakthrough</h3>
+                    <div>
+                        <span class="subject-tag">Biology</span>
+                        <span class="subject-tag">Botany</span>
+                        <span class="subject-tag">Zoology</span>
+                    </div>
+                    <p>Detailed explanations of complex biological concepts with animations and diagrams for PUC students.</p>
+                    <a href="https://www.youtube.com/c/BiologyBreakthrough" target="_blank" class="btn">Visit Channel</a>
+                </div>
+                
+                <div class="channel-card">
+                    <h3 class="channel-title">Maths Master PUC</h3>
+                    <div>
+                        <span class="subject-tag">Mathematics</span>
+                        <span class="subject-tag">Calculus</span>
+                        <span class="subject-tag">Statistics</span>
+                    </div>
+                    <p>Advanced mathematics tutorials covering calculus, algebra, vectors, and probability for 12th standard.</p>
+                    <a href="https://www.youtube.com/c/MathsMasterPUC" target="_blank" class="btn">Visit Channel</a>
+                </div>
+                
+                <div class="channel-card">
+                    <h3 class="channel-title">Commerce Capsule</h3>
+                    <div>
+                        <span class="subject-tag">Accountancy</span>
+                        <span class="subject-tag">Business Studies</span>
+                        <span class="subject-tag">Economics</span>
+                    </div>
+                    <p>Comprehensive tutorials for commerce stream students covering accountancy, economics, and business studies.</p>
+                    <a href="https://www.youtube.com/c/CommerceCapsule" target="_blank" class="btn">Visit Channel</a>
+                </div>
+                
+                <div class="channel-card">
+                    <h3 class="channel-title">Computer Science Hub</h3>
+                    <div>
+                        <span class="subject-tag">Computer Science</span>
+                        <span class="subject-tag">Programming</span>
+                        <span class="subject-tag">Database</span>
+                    </div>
+                    <p>Programming tutorials and computer science concepts explained simply for PUC II students.</p>
+                    <a href="https://www.youtube.com/c/ComputerScienceHub" target="_blank" class="btn">Visit Channel</a>
+                </div>
+                
+                <div class="channel-card">
+                    <h3 class="channel-title">Humanities Help</h3>
+                    <div>
+                        <span class="subject-tag">History</span>
+                        <span class="subject-tag">Political Science</span>
+                        <span class="subject-tag">Sociology</span>
+                    </div>
+                    <p>Comprehensive lectures on humanities subjects for Arts stream students in PUC II.</p>
+                    <a href="https://www.youtube.com/c/HumanitiesHelp" target="_blank" class="btn">Visit Channel</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>General Educational Channels (Both 10th & 12th)</h2>
+            <div class="channel-list">
+                <div class="channel-card">
+                    <h3 class="channel-title">Karnataka Education Department</h3>
+                    <div>
+                        <span class="subject-tag">All Subjects</span>
+                        <span class="subject-tag">Official</span>
+                    </div>
+                    <p>Government-run channel with lectures and resources for both SSLC and PUC students.</p>
+                    <a href="https://www.youtube.com/c/KarnatakaEducationDepartment" target="_blank" class="btn">Visit Channel</a>
+                </div>
+                
+                <div class="channel-card">
+                    <h3 class="channel-title">Exam Prep Karnataka</h3>
+                    <div>
+                        <span class="subject-tag">Exam Tips</span>
+                        <span class="subject-tag">Question Papers</span>
+                    </div>
+                    <p>Focused on exam preparation with previous years' question papers and solving techniques.</p>
+                    <a href="https://www.youtube.com/c/ExamPrepKarnataka" target="_blank" class="btn">Visit Channel</a>
+                </div>
+                
+                <div class="channel-card">
+                    <h3 class="channel-title">Career Guidance Karnataka</h3>
+                    <div>
+                        <span class="subject-tag">Career</span>
+                        <span class="subject-tag">Guidance</span>
+                    </div>
+                    <p>Information about various career options and opportunities after 10th and 12th standards.</p>
+                    <a href="https://www.youtube.com/c/CareerGuidanceKarnataka" target="_blank" class="btn">Visit Channel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>Note: These channels are curated specifically for Karnataka State Board students. The links provided are for educational purposes.</p>
+        <p>Last Updated: March 24, 2025</p>
+    </div>
+    <script>
+        function goBack() {
+            if (document.referrer) {
+                // Go to the previous page if there's a referrer
+                window.history.back();
+            } else {
+                // Fallback to a default page if no referrer
+                window.location.href = '../index.html';
+            }
+        }
+    </script>
+</body>
+</html>
