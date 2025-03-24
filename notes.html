@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes - Infinity</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="notes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Prevent theme flashing -->
+    <script>
+        // Apply theme immediately to prevent flashing
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.body.className = savedTheme;
+            } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.body.className = 'dark-mode';
+            } else {
+                document.body.className = 'light-mode';
+            }
+        })();
+    </script>
+</head>
+<body class="light-mode">
+    <!-- Header Section (same as homepage) -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Infinity Logo">
+                <h1>Infinity</h1>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="notes.html" class="active">Notes</a></li>
+                    <li><a href="pyq.html">PYQ</a></li>
+                    <li><a href="YT-Channels/channel.html">YT-Channels</a></li>
+                    <li><a href="login/login.html" class="btn-login">Login/Register</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="theme-toggle" id="theme-toggle">
+                <i class="fas fa-sun"></i>
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Notes Hero Section -->
+    <section class="notes-hero">
+        <div class="container">
+            <div class="notes-hero-content">
+                <h1>Study Notes for Karnataka Board</h1>
+                <p>Access high-quality, comprehensive notes for all subjects and classes</p>
+                <div class="notes-search-container">
+                    <div class="notes-search">
+                        <input type="text" id="search-notes" placeholder="Search for notes...">
+                        <button class="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Class Selection Tabs -->
+    <section class="class-tabs">
+        <div class="container">
+            <div class="tab-container">
+                <button class="tab active" data-class="all">All</button>
+                <button class="tab" data-class="10th">10th Grade</button>
+                <button class="tab" data-class="12th">12th Grade</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notes Filter Section -->
+    <section class="notes-filters">
+        <div class="container">
+            <div class="filter-container">
+                <div class="filter-group">
+                    <label for="subject-filter">Subject</label>
+                    <select id="subject-filter" class="filter-select">
+                        <option value="all">All Subjects</option>
+                        <option value="maths">Mathematics</option>
+                        <option value="science">Science</option>
+                        <option value="physics">Physics</option>
+                        <option value="chemistry">Chemistry</option>
+                        <option value="biology">Biology</option>
+                        <option value="english">English</option>
+                        <option value="kannada">Kannada</option>
+                        <option value="social">Social Studies</option>
+                        <option value="computer">Computer Science</option>
+                        <option value="commerce">Commerce</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="chapter-filter">Chapter</label>
+                    <select id="chapter-filter" class="filter-select">
+                        <option value="all">All Chapters</option>
+                        <!-- Chapters will be populated by JavaScript based on subject selection -->
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="rating-filter">Rating</label>
+                    <select id="rating-filter" class="filter-select">
+                        <option value="all">All Ratings</option>
+                        <option value="5">5 Stars</option>
+                        <option value="4">4+ Stars</option>
+                        <option value="3">3+ Stars</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="sort-filter">Sort By</label>
+                    <select id="sort-filter" class="filter-select">
+                        <option value="popular">Most Popular</option>
+                        <option value="recent">Recently Added</option>
+                        <option value="rating-high">Highest Rated</option>
+                        <option value="rating-low">Lowest Rated</option>
+                    </select>
+                </div>
+                <button class="btn-reset-filter">
+                    <i class="fas fa-sync-alt"></i>
+                    Reset Filters
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notes Grid Section -->
+    <section class="notes-grid-section">
+        <div class="container">
+            <div class="notes-count">
+                <p><span id="notes-count-number">24</span> notes found</p>
+            </div>
+            <div class="notes-grid">
+                <!-- Note Card 1 -->
+                <div class="note-card" data-class="10th" data-subject="maths" data-rating="4.5">
+                    <div class="note-card-preview">
+                        <img src="images/math-notes-preview.jpg" alt="Mathematics Notes Preview">
+                        <div class="note-overlay">
+                            <button class="btn-preview"><i class="fas fa-eye"></i> Preview</button>
+                            <button class="btn-download"><i class="fas fa-download"></i> Download</button>
+                        </div>
+                    </div>
+                    <div class="note-card-content">
+                        <div class="note-card-header">
+                            <span class="note-subject">Mathematics</span>
+                            <span class="note-class">10th Grade</span>
+                        </div>
+                        <h3>Algebra and Functions - Complete Notes</h3>
+                        <p>Comprehensive coverage of all topics in algebra, functions, and equations as per Karnataka Board syllabus.</p>
+                        <div class="note-meta">
+                            <div class="note-rating">
+                                <span class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </span>
+                                <span class="rating-count">4.5 (120 ratings)</span>
+                            </div>
+                            <div class="note-pages">
+                                <i class="fas fa-file-alt"></i> 25 pages
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Note Card 2 -->
+                <div class="note-card" data-class="10th" data-subject="science" data-rating="5">
+                    <div class="note-card-preview">
+                        <img src="images/science-notes-preview.jpg" alt="Science Notes Preview">
+                        <div class="note-overlay">
+                            <button class="btn-preview"><i class="fas fa-eye"></i> Preview</button>
+                            <button class="btn-download"><i class="fas fa-download"></i> Download</button>
+                        </div>
+                    </div>
+                    <div class="note-card-content">
+                        <div class="note-card-header">
+                            <span class="note-subject">Science</span>
+                            <span class="note-class">10th Grade</span>
+                        </div>
+                        <h3>Light - Reflection and Refraction</h3>
+                        <p>Detailed notes on light, reflection, refraction, and related concepts with diagrams and examples.</p>
+                        <div class="note-meta">
+                            <div class="note-rating">
+                                <span class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </span>
+                                <span class="rating-count">5.0 (85 ratings)</span>
+                            </div>
+                            <div class="note-pages">
+                                <i class="fas fa-file-alt"></i> 18 pages
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Note Card 3 -->
+                <div class="note-card" data-class="12th" data-subject="physics" data-rating="4.2">
+                    <div class="note-card-preview">
+                        <img src="images/physics-notes-preview.jpg" alt="Physics Notes Preview">
+                        <div class="note-overlay">
+                            <button class="btn-preview"><i class="fas fa-eye"></i> Preview</button>
+                            <button class="btn-download"><i class="fas fa-download"></i> Download</button>
+                        </div>
+                    </div>
+                    <div class="note-card-content">
+                        <div class="note-card-header">
+                            <span class="note-subject">Physics</span>
+                            <span class="note-class">12th Grade</span>
+                        </div>
+                        <h3>Electrostatics and Current Electricity</h3>
+                        <p>Complete chapter notes covering electric charges, fields, potential, capacitance, and current electricity.</p>
+                        <div class="note-meta">
+                            <div class="note-rating">
+                                <span class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+                                <span class="rating-count">4.2 (68 ratings)</span>
+                            </div>
+                            <div class="note-pages">
+                                <i class="fas fa-file-alt"></i> 32 pages
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Note Card 4 -->
+                <div class="note-card" data-class="12th" data-subject="chemistry" data-rating="4.8">
+                    <div class="note-card-preview">
+                        <img src="images/chemistry-notes-preview.jpg" alt="Chemistry Notes Preview">
+                        <div class="note-overlay">
+                            <button class="btn-preview"><i class="fas fa-eye"></i> Preview</button>
+                            <button class="btn-download"><i class="fas fa-download"></i> Download</button>
+                        </div>
+                    </div>
+                    <div class="note-card-content">
+                        <div class="note-card-header">
+                            <span class="note-subject">Chemistry</span>
+                            <span class="note-class">12th Grade</span>
+                        </div>
+                        <h3>Organic Chemistry - Concepts and Applications</h3>
+                        <p>Detailed notes on organic compounds, reactions, mechanisms, and their applications with practice problems.</p>
+                        <div class="note-meta">
+                            <div class="note-rating">
+                                <span class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </span>
+                                <span class="rating-count">4.8 (92 ratings)</span>
+                            </div>
+                            <div class="note-pages">
+                                <i class="fas fa-file-alt"></i> 40 pages
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Note Card 5 -->
+                <div class="note-card" data-class="10th" data-subject="social" data-rating="4.3">
+                    <div class="note-card-preview">
+                        <img src="images/social-notes-preview.jpg" alt="Social Studies Notes Preview">
+                        <div class="note-overlay">
+                            <button class="btn-preview"><i class="fas fa-eye"></i> Preview</button>
+                            <button class="btn-download"><i class="fas fa-download"></i> Download</button>
+                        </div>
+                    </div>
+                    <div class="note-card-content">
+                        <div class="note-card-header">
+                            <span class="note-subject">Social Studies</span>
+                            <span class="note-class">10th Grade</span>
+                        </div>
+                        <h3>Indian Freedom Movement - Complete Notes</h3>
+                        <p>Comprehensive notes on the Indian Freedom Movement with timeline, key figures, and important events.</p>
+                        <div class="note-meta">
+                            <div class="note-rating">
+                                <span class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+                                <span class="rating-count">4.3 (75 ratings)</span>
+                            </div>
+                            <div class="note-pages">
+                                <i class="fas fa-file-alt"></i> 28 pages
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Note Card 6 -->
+                <div class="note-card" data-class="12th" data-subject="computer" data-rating="4.6">
+                    <div class="note-card-preview">
+                        <img src="images/computer-notes-preview.jpg" alt="Computer Science Notes Preview">
+                        <div class="note-overlay">
+                            <button class="btn-preview"><i class="fas fa-eye"></i> Preview</button>
+                            <button class="btn-download"><i class="fas fa-download"></i> Download</button>
+                        </div>
+                    </div>
+                    <div class="note-card-content">
+                        <div class="note-card-header">
+                            <span class="note-subject">Computer Science</span>
+                            <span class="note-class">12th Grade</span>
+                        </div>
+                        <h3>Programming Concepts in Python</h3>
+                        <p>Detailed notes on Python programming, data structures, algorithms, and practical applications with examples.</p>
+                        <div class="note-meta">
+                            <div class="note-rating">
+                                <span class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </span>
+                                <span class="rating-count">4.6 (110 ratings)</span>
+                            </div>
+                            <div class="note-pages">
+                                <i class="fas fa-file-alt"></i> 45 pages
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more-container">
+                <button class="btn-load-more">Load More Notes</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notes Preview Modal -->
+    <div class="notes-preview-modal" id="previewModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Notes Preview</h2>
+                <button class="modal-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="pdf-preview">
+                    <iframe id="pdf-iframe" src="" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="pdf-info">
+                    <h3 id="pdf-title">Algebra and Functions - Complete Notes</h3>
+                    <div class="pdf-meta">
+                        <p><strong>Subject:</strong> <span id="pdf-subject">Mathematics</span></p>
+                        <p><strong>Class:</strong> <span id="pdf-class">10th Grade</span></p>
+                        <p><strong>Pages:</strong> <span id="pdf-pages">25 pages</span></p>
+                        <p><strong>Format:</strong> <span id="pdf-format">PDF</span></p>
+                        <p><strong>Size:</strong> <span id="pdf-size">2.4 MB</span></p>
+                        <p><strong>Uploaded:</strong> <span id="pdf-date">15 May, 2023</span></p>
+                    </div>
+                    <div class="pdf-rating">
+                        <h4>Rate this note:</h4>
+                        <div class="rate-stars">
+                            <i class="far fa-star" data-rating="1"></i>
+                            <i class="far fa-star" data-rating="2"></i>
+                            <i class="far fa-star" data-rating="3"></i>
+                            <i class="far fa-star" data-rating="4"></i>
+                            <i class="far fa-star" data-rating="5"></i>
+                        </div>
+                    </div>
+                    <button class="btn-primary btn-download-full"><i class="fas fa-download"></i> Download Full PDF</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- No Results Found -->
+    <div class="no-results-container" style="display: none;">
+        <div class="container">
+            <div class="no-results">
+                <i class="fas fa-search"></i>
+                <h2>No results found</h2>
+                <p>No results match your current filters.</p>
+                <div class="btn-container">
+                    <button class="btn-reset-all">
+                        <i class="fas fa-undo"></i>
+                        Reset All Filters
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Need More Study Resources?</h2>
+                <p>Join Infinity to access our complete library of study materials, notes, practice tests, and more.</p>
+                <div class="cta-buttons">
+                    <a href="login/login.html" class="btn-primary">Register Now</a>
+                    <a href="#" class="btn-secondary">Learn More</a>
+                </div>
+                <!-- Adding the upload button below CTA buttons -->
+                <div class="upload-container">
+                    <button class="btn-upload">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        Upload Documents / Notes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section (same as homepage) -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h2>Infinity</h2>
+                <p>Your partner for academic excellence, providing comprehensive resources for Karnataka Board students.</p>
+                <div class="example-2">
+                    <div class="icon-content">
+                        <a href="#">
+                            <div class="filled"></div>
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <div class="tooltip">Facebook</div>
+                    </div>
+                    <div class="icon-content">
+                        <a href="#">
+                            <div class="filled"></div>
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <div class="tooltip">Twitter</div>
+                    </div>
+                    <div class="icon-content">
+                        <a href="#">
+                            <div class="filled"></div>
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <div class="tooltip">Instagram</div>
+                    </div>
+                    <div class="icon-content">
+                        <a href="#">
+                            <div class="filled"></div>
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <div class="tooltip">YouTube</div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-angle-right"></i> Home</a></li>
+                    <li><a href="notes.html"><i class="fas fa-angle-right"></i> Notes</a></li>
+                    <li><a href="pyq.html"><i class="fas fa-angle-right"></i> PYQ</a></li>
+                    <li><a href="#"><i class="fas fa-angle-right"></i> Departments</a></li>
+                    <li><a href="author pro/author_profile.html"><i class="fas fa-angle-right"></i> About Author</a></li>
+                    <li><a href="#"><i class="fas fa-angle-right"></i> Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-angle-right"></i> 10th Grade Materials</a></li>
+                    <li><a href="#"><i class="fas fa-angle-right"></i> 12th Grade Materials</a></li>
+                    <li><a href="#"><i class="fas fa-angle-right"></i> Model Question Papers</a></li>
+                    
+                    <li><a href="#"><i class="fas fa-angle-right"></i> Study Tips</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <ul class="footer-links">
+                    <li><a href="mailto:info@infinity.com"><i class="fas fa-envelope"></i> info@infinity.com</a></li>
+                    <li><a href="tel:+919876543210"><i class="fas fa-phone"></i> +91 9876543210</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Bengaluru, Karnataka, India</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Designed & Developed by Arun Chavan || Copyright &copy; 2025 Infinity.com</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="notes.js"></script>
+</body>
+</html> 
