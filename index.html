@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinity - Your Complete Resource for Karnataka Board Success</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Prevent theme flashing -->
+    <script>
+        // Apply theme immediately to prevent flashing
+        (function () {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.body.className = savedTheme;
+            } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.body.className = 'dark-mode';
+            } else {
+                document.body.className = 'light-mode';
+            }
+        })();
+    </script>
+</head>
+
+<body class="light-mode">
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Infinity Logo">
+                <h1>Infinity</h1>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="notes.html">Notes</a></li>
+                    <li><a href="pyq.html">PYQ</a></li>
+                    <li><a href="YT-Channels/channel.html">YT-Channels</a></li>
+                    <li><a href="login/login.html" class="btn-login">Login/Register</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="theme-toggle" id="theme-toggle">
+                <i class="fas fa-sun"></i>
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Your Complete Resource for Karnataka Board Success</h1>
+                <p>Access notes, previous year questions, and study materials designed specifically for Karnataka Board
+                    students.</p>
+                <a href="notes.html" class="btn-primary">Explore Resources</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose Infinity</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Comprehensive Notes</h3>
+                    <p>Well-structured notes covering all subjects and chapters for Karnataka Board curriculum.</p>
+                    <a href="#" class="learn-more">Learn More</a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Previous Year Questions</h3>
+                    <p>Extensive collection of previous year questions with detailed solutions.</p>
+                    <a href="#" class="learn-more">Learn More</a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Study Materials</h3>
+                    <p>Specially curated study materials focusing on important topics and exam patterns.</p>
+                    <a href="#" class="learn-more">Learn More</a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3>Digital Learning</h3>
+                    <p>Interactive content and resources that make learning engaging and effective.</p>
+                    <a href="#" class="learn-more">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Access Section -->
+    <section class="quick-access">
+        <div class="container">
+            <h2 class="section-title">Quick Access</h2>
+            <div class="grade-options">
+                <a href="#" class="grade-card">
+                    <i class="fas fa-school"></i>
+                    <h3>10th Grade Resources</h3>
+                </a>
+                <a href="#" class="grade-card">
+                    <i class="fas fa-university"></i>
+                    <h3>12th Grade Resources</h3>
+                </a>
+            </div>
+            <div class="subjects">
+                <h3>Browse by Subject</h3>
+                <div class="subject-grid">
+                    <a href="#" class="subject-item"><i class="fas fa-calculator"></i> Mathematics</a>
+                    <a href="#" class="subject-item"><i class="fas fa-flask"></i> Science</a>
+                    <a href="#" class="subject-item"><i class="fas fa-language"></i> Languages</a>
+                    <a href="#" class="subject-item"><i class="fas fa-globe-asia"></i> Social Studies</a>
+                    <a href="#" class="subject-item"><i class="fas fa-laptop-code"></i> Computer Science</a>
+                    <a href="#" class="subject-item"><i class="fas fa-chart-line"></i> Commerce</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Updates Section -->
+    <section class="latest-updates">
+        <div class="container">
+            <h2 class="section-title">Latest Updates</h2>
+            <div class="updates-grid">
+                <div class="update-card">
+                    <div class="update-date">May 15, 2023</div>
+                    <h3>New Physics Notes Added</h3>
+                    <p>Complete chapter-wise notes for 12th grade Physics now available.</p>
+                    <a href="#" class="btn-secondary">Read More</a>
+                </div>
+                <div class="update-card">
+                    <div class="update-date">May 10, 2023</div>
+                    <h3>Exam Dates Announced</h3>
+                    <p>Karnataka Board has announced the examination schedule for the upcoming academic year.</p>
+                    <a href="#" class="btn-secondary">Check Dates</a>
+                </div>
+                <div class="update-card">
+                    <div class="update-date">May 5, 2023</div>
+                    <h3>10th Grade Resources Updated</h3>
+                    <p>All 10th grade study materials have been updated as per the latest syllabus.</p>
+                    <a href="#" class="btn-secondary">Explore</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Students Say</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial-slide active">
+                    <div class="testimonial-content">
+                        <div class="student-image">
+                            <img src="images/student1.jpg" alt="Student">
+                        </div>
+                        <p>"Infinity helped me score 95% in my board exams. The notes and PYQs were extremely helpful
+                            for my preparation."</p>
+                        <h4>Aarav Sharma</h4>
+                        <p class="student-info">12th Grade, Bengaluru</p>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <div class="student-image">
+                            <img src="images/student2.jpg" alt="Student">
+                        </div>
+                        <p>"The study materials are comprehensive and easy to understand. I improved my grades
+                            significantly after using this website."</p>
+                        <h4>Meera Patel</h4>
+                        <p class="student-info">10th Grade, Mysuru</p>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <div class="student-image">
+                            <img src="images/student3.jpg" alt="Student">
+                        </div>
+                        <p>"The previous year questions with solutions helped me understand the exam pattern better.
+                            Highly recommended for all Karnataka Board students."</p>
+                        <h4>Rahul Gowda</h4>
+                        <p class="student-info">12th Grade, Mangaluru</p>
+                    </div>
+                </div>
+                <div class="testimonial-controls">
+                    <button class="prev-btn"><i class="fas fa-arrow-left"></i></button>
+                    <div class="testimonial-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <button class="next-btn"><i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Need More Study Resources?</h2>
+                <p>Join Infinity to access our complete library of study materials, notes, practice tests, and more.</p>
+                <div class="cta-buttons">
+                    <a href="login/login.html" class="btn-primary">Register Now</a>
+                    <a href="#" class="btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h2>Infinity</h2>
+                <p>Your partner for academic excellence, providing comprehensive resources for Karnataka Board students.
+                </p>
+                <div class="example-2">
+                    <div class="icon-content">
+                        <a href="#">
+                            <div class="filled"></div>
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <div class="tooltip">Facebook</div>
+                    </div>
+                    <div class="icon-content">
+                        <a href="#">
+                            <div class="filled"></div>
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <div class="tooltip">Twitter</div>
+                    </div>
+                    <div class="icon-content">
+                        <a href="#">
+                            <div class="filled"></div>
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <div class="tooltip">Instagram</div>
+                    </div>
+                    <div class="icon-content">
+                        <a href="#">
+                            <div class="filled"></div>
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <div class="tooltip">YouTube</div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-angle-right"></i> Home</a></li>
+                    <li><a href="notes.html"><i class="fas fa-angle-right"></i> Notes</a></li>
+                    <li><a href="pyq.html"><i class="fas fa-angle-right"></i> PYQ</a></li>
+                    <li><a href="#"><i class="fas fa-angle-right"></i> Departments</a></li>
+                    <li><a href="author pro/author_profile.html"><i class="fas fa-angle-right"></i> About Author</a></li>
+                    <li><a href="#"><i class="fas fa-angle-right"></i> Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-angle-right"></i> 10th Grade Materials</a></li>
+                    <li><a href="#"><i class="fas fa-angle-right"></i> 12th Grade Materials</a></li>
+                    <li><a href="#"><i class="fas fa-angle-right"></i> Model Question Papers</a></li>
+                   
+                    <li><a href="#"><i class="fas fa-angle-right"></i> Study Tips</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <ul class="footer-links">
+                    <li><a href="mailto:info@infinity.com"><i class="fas fa-envelope"></i> info@infinity.com</a></li>
+                    <li><a href="tel:+919876543210"><i class="fas fa-phone"></i> +91 9876543210</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Bengaluru, Karnataka, India</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+
+            <p>Designed & Developed by Arun Chavan || Copyright &copy; 2025 Infinity.com</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
