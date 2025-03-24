@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Author Profile</title>
+    <!-- Add Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Add Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .profile-container {
+            max-width: 800px;
+            margin: 0 auto;
+            border: none;
+            border-radius: 16px;
+            padding: 30px;
+            background-color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.8s ease-out;
+            font-weight: 400;
+        }
+
+        .profile-header {
+            font-family: 'Poppins', sans-serif;
+            font-size: 32px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .profile-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 20px;
+        }
+
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-name {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 28px;
+            margin: 0;
+            color: #1a237e;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        .profile-name:hover {
+            color: #303f9f;
+            transform: translateY(-2px);
+        }
+
+        .profile-name::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(to right, #1a237e, #303f9f);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .profile-name:hover::after {
+            width: 100%;
+        }
+
+        .profile-role {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: #455a64;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            opacity: 0.9;
+        }
+
+        .profile-role:hover {
+            opacity: 1;
+            letter-spacing: 1.5px;
+            color: #1976d2;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 18px;
+            text-decoration: none;  /* Add this line to remove underline */
+        }
+
+        .social-icon:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .whatsapp { background-color: #25D366; }
+        .instagram { background-color: #E4405F; }
+        .telegram { background-color: #0088cc; }
+        .linkedin { background-color: #0077B5; }
+        .github { background-color: #333; }
+        .youtube { background-color: #FF0000; }
+        .twitter { background-color: #1DA1F2; }
+
+        .bio {
+            text-align: justify;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            color: #34495e;
+            padding: 0 20px;
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 0.1px;
+        }
+
+        .responsibilities {
+            text-align: left;
+            width: 100%;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 12px;
+        }
+
+        .responsibilities-title {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.3px;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            font-size: 20px;
+        }
+
+        .responsibilities ul {
+            margin-top: 10px;
+            padding-left: 25px;
+        }
+
+        .responsibilities li {
+            margin-bottom: 12px;
+            color: #34495e;
+            line-height: 1.6;
+        }
+
+        .social-icon i {
+            font-size: 20px;
+        }
+        
+        .section-icon {
+            margin-right: 10px;
+            color: #2c3e50;
+        }
+        
+        .responsibility-item {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+        }
+        
+        .responsibility-item i {
+            color: #2c3e50;
+            font-size: 14px;
+        }
+
+        .responsibility-item span {
+            font-size: 15px;
+            font-weight: 400;
+            letter-spacing: 0.1px;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: #1a237e;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+
+        .back-button:hover {
+            transform: scale(1.1);
+            background: #303f9f;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        @media (max-width: 768px) {
+            .profile-container {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+
+            .profile-name {
+                font-size: 20px;
+            }
+
+            .bio {
+                padding: 0 10px;
+                font-size: 0.95em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .profile-header {
+                font-size: 24px;
+            }
+
+            .profile-image {
+                width: 120px;
+                height: 120px;
+            }
+
+            .social-icons {
+                gap: 10px;
+            }
+
+            .social-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+
+            .responsibilities {
+                padding: 15px;
+            }
+
+            .back-button {
+                top: 10px;
+                left: 10px;
+                width: 35px;
+                height: 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="back-button" onclick="goBack()">
+        <i class="fas fa-arrow-left"></i>
+    </div>
+    <div class="profile-container">
+        <div class="profile-header">
+            <i class="fas fa-user-circle section-icon"></i>Author Profile
+        </div>
+        
+        <div class="profile-content">
+            <div class="profile-image">
+                <!-- Replace with actual image path -->
+                <img src="img.jpg" alt="Arun Chavan">
+            </div>
+            
+            <div class="profile-name"> ARUN CHAVAN</div>
+            <div class="profile-role">Role: Developer & Designer</div>
+            
+            <div class="social-icons">
+                <a href="https://www.instagram.com/_arunnn__1/" class="social-icon instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.youtube.com/@ARUNCHAVAN-w3x" class="social-icon youtube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/arun-chavan-9669b0351" class="social-icon linkedin">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.github.com/" class="social-icon github">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="#" class="social-icon twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+            
+            <div class="bio">
+                Hi, I'm <strong>Arun Chavan</strong>, a 2nd-year Computer Science and Engineering (CSE) student from K S Institute of Technology, Bangalore. I have a strong passion for design and development. My journey in the tech world has taught me the importance of creating user-friendly and efficient solutions. As a student developer and designer, I'm committed to applying my skills to create innovative projects that solve real-world problems. I enjoy collaborating with teams to bring ideas to life through thoughtful design and robust development practices.
+            </div>
+            
+            <div class="responsibilities">
+                <div class="responsibilities-title">
+                    <i class="fas fa-tasks section-icon"></i>Responsibilities:
+                </div>
+                <ul>
+                    <li class="responsibility-item">
+                        <i class="fas fa-code"></i>
+                        <span>Developing web and mobile applications with focus on user experience and interface design.</span>
+                    </li>
+                    <li class="responsibility-item">
+                        <i class="fas fa-paint-brush"></i>
+                        <span>Creating wireframes, prototypes and visual designs for various digital platforms.</span>
+                    </li>
+                    <li class="responsibility-item">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>Implementing responsive designs and ensuring cross-browser compatibility.</span>
+                    </li>
+                    <li class="responsibility-item">
+                        <i class="fas fa-users"></i>
+                        <span>Collaborating with team members on project development and implementation.</span>
+                    </li>
+                    <li class="responsibility-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Continuously learning new technologies and design principles to enhance development skills.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        function goBack() {
+            if (document.referrer) {
+                // Go to the previous page if there's a referrer
+                window.history.back();
+            } else {
+                // Fallback to a default page if no referrer
+                window.location.href = '../index.html';
+            }
+        }
+    </script>
+</body>
+</html>
